@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alavi. hammad</title>
+    <meta name="theme-color" content="#181818">
+    <link rel="stylesheet" href="assets/styles/__theme.css">
+</head>
+<body>
+    <div id="app">
+        <div class="header">
+
+            <a class="brand">
+                <h1 id="logo">A</h1>
+            </a>
+
+            <div id="--menu" class="">
+                <span class="menu-item"></span>
+                <span class="menu-item"></span>
+                <span class="menu-item"></span>
+            </div>
+
+            <div class="n-avbar" id="n-avbar">
+                <a to-page="home" class="navbar_link active_link">
+                    <ion-icon name="home-outline"></ion-icon>
+                    <div class="popup-hover">
+                        Home
+                    </div>
+                </a>
+                <a to-page="about" class="navbar_link">
+                    <ion-icon name="person-outline"></ion-icon>
+                    <div class="popup-hover">
+                        About
+                    </div>
+                </a>
+                <a to-page="portfo" class="navbar_link">
+                    <ion-icon name="eye-outline"></ion-icon>
+                    <div class="popup-hover">
+                        Portfolio
+                    </div>
+                </a>
+                <a to-page="contacts" class="navbar_link">
+                    <ion-icon name="mail-outline"></ion-icon>
+                    <div class="popup-hover">
+                        Contacts
+                    </div>
+                </a>
+            </div>
+
+            <div class="socialMedia">
+                <a><ion-icon name="logo-instagram"></ion-icon></a>
+                <a><ion-icon name="logo-whatsapp"></ion-icon></a>
+                <a><ion-icon name="send-outline"></ion-icon></a>
+                <a><ion-icon name="logo-github"></ion-icon></a>
+            </div>
+        </div>
+        <div class="content-container-right">
+            <div id="home" class="content-page active_page">
+                <div class="content-page-bg"></div>
+                <div class="content-page-content">
+                    <h1 id="home_header"><span class="gray_color">Alavi.</span> Hammad</h1>
+                    <h2 id="home_subheader">
+                        Javascript Developer 
+                    </h2>
+                </div>
+            </div>
+            <div id="about" class="content-page">
+                <div class="content-page-content">
+                    <div class="content-page-left-content">
+                        <span class="highlight_text">About Me</span>
+                        <p id="bio_text">
+                           <span class="color_in_theme_color">Hello, I’m a Patrick</span>, web-developer based on Paris.
+                            I have rich experience in web site design & building
+                            and customization. Also I am good at
+                            <span class="color_in_theme_color">
+                            html, css, wordpress, php, jquery, bootstrap.
+                            </span>
+                            <br>
+                            <button id="download_cv" class="btn btn-theme">
+                                Download CV <ion-icon name="cloud-download-outline"></ion-icon>
+                            </button>
+                        </p>
+                        <br>
+                        <div class="content-page-row">
+                            <h3 class="content-page-row-title"><span class="color_in_theme_color">My</span> Skills</h3>
+                            <div class="content-page-row-content">
+                                <div class="a_row">
+                                    <label class="row-label">
+                                         HTML5 / CSS
+                                    </label>
+                                    <div class="progress">
+                                        <div class="progress-content" style="width: 90%;">
+                                            <span class="progress-content-value">
+                                                90%
+                                            </span>
+                                        </div>
+                                    </div>  
+                                </div>
+                                <div class="a_row">
+                                    <label class="row-label">
+                                        Javascript
+                                    </label>
+                                    <div class="progress">
+                                        <div class="progress-content" style="width: 40%;">
+                                            <span class="progress-content-value">
+                                                40%
+                                            </span>
+                                        </div>
+                                    </div>  
+                                </div>
+                            </div>
+                        </div>
+                        <div class="content-page-row">
+                            <h3 class="content-page-row-title"><span class="color_in_theme_color">My</span> Educations</h3>
+                            <div class="content-page-row-content">
+
+                                <div class="image-box" uk-lightbox
+                                v-for="item in educations_list"
+                                >
+                                    <img :src="item.ed_cover" class="image-box-cover">
+                                    <div class="image-box-hover">
+                                        <ion-icon name="expand-outline"></ion-icon>
+                                    </div>
+                                    <p class="image-box-description">
+                                        {{item.ed_caption}}
+                                    </p>
+                                    <a
+                                    :href="item.ed_cover" 
+                                    :data-caption="item.ed_caption"
+                                    class="image-box-link"></a>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="content-page-right-content">
+                        <div class="content-page-right-content-img"></div>
+                    </div>
+                </div>
+            </div>
+            <div id="portfo" class="content-page">
+                <span class="highlight_text">Portfolio</span>
+                <div class="content-page-content">
+                
+                    <div
+                    uk-lightbox
+                    class="image-col"
+                    v-for="item in portfo_list"
+                    >
+                        <img class="image-col-cover" :src="item.po_cover"/>
+                        <p class="image-col-des">
+                            {{item.po_caption}}
+                        </p>
+                        <a
+                        :href="item.po_cover"
+                        :data-caption="item.po_caption"
+                        class="image-col-link"
+                        ></a>
+                    </div>
+                    
+                </div>
+            </div>
+            <div id="contacts" class="content-page">
+                <div class="content-page-content">
+                    <span class="highlight_text">Contacts</span>
+
+                    <div class="uk-container">
+
+                        <div class="content-page-row">
+                            <h3 class="content-page-row-title"><span class="color_in_theme_color">Get</span> in Touch</h3>
+                            <div class="content-page-row-content">
+
+                                <info-box
+                                v-for="item in info_box.info_box_list"
+                                :icon="item.icon"
+                                header="item.header"
+                                value="item.value"
+                                ></info-box>
+                                
+                            </div>
+                        </div>
+                        <br>
+                        <div class="content-page-row">
+                            <h3 class="content-page-row-title"><span class="color_in_theme_color">Contact</span> Form</h3>
+                            <div class="content-page-row-content">
+
+                                <div id="contact_form">
+                                    <input type="text" class="underline-input" placeholder="Full Name" />
+                                    <input type="text" class="underline-input" placeholder="Email" />
+                                    <textarea class="underline-input" placeholder="Text..."></textarea>
+                                    <button class="btn btn-theme">Submit</button>
+                                </div>
+                                
+                            </div>
+                        </div>
+
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="assets/scripts/jquery-2.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ionicons/5.4.0/ionicons.min.js"></script>
+    <script type="module" src="https://cdnjs.cloudflare.com/ajax/libs/ionicons/5.4.0/ionicons/ionicons.esm.min.js"></script>
+    <script type="text/javascript" src="assets/scripts/vue.js"></script>
+    <script src="assets/scripts/uikit.min.js"></script>
+    <script type="text/javascript" src="assets/scripts/script.js"></script>
+</body>
+</html>
